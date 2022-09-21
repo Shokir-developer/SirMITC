@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <main id="main" data-aos="fade-up">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Yangiliklar oynasi</h2>
+        </div>
+
+      </div>
+    </section><!-- Breadcrumbs Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+
+              <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                {% for new in news %}
+                <div class="swiper-slide">
+                  <div class="container">
+                    <div class="section-title">
+                        <h3>
+                          <span>{{new.title}}</span>
+                        </h3>
+                    </div>
+                  <div align="center">
+                    <img src="{{new.image.url}}" alt="" width="400" height="400">
+                  </div>
+                  <div style="padding: 10px;">
+                    <p>{{new.body}}</p>
+                  </div>
+
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Biz bilan aloqa</h3>
+              <ul>
+                <li><strong>Manzil</strong>: Sirdaryo, Guliston , Alisher Navoiy ko'chasi</li>
+                <li><strong>Telefon</strong>: +998 99 477 14 44</li>
+                <li><strong>Email</strong>: depGulistan@mitc.uz</li>
+                <li><strong>Vazirlik sayti</strong>: <a href="https://www.mitc.uz">www.mitc.uz</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+{% endblock content %}
